@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="404dp"
+        android:layout_height="87dp"
+        android:layout_marginBottom="51dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/inputName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="26dp"
+            android:text="Registration"
+            android:textColor="@color/skylightBlue2"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="112dp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputName2"
+            android:layout_width="398dp"
+            android:layout_height="55dp"
+            android:drawableLeft="@drawable/malep"
+            android:hint="  Full Name"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputEmail"
+        android:layout_width="369dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputName">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputMobile2"
+            android:layout_width="398dp"
+            android:layout_height="55dp"
+            android:drawableLeft="@drawable/mobile_phone"
+            android:hint="  Mobile Number "
+
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputAge"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputAge2"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
+            android:drawableLeft="@drawable/age"
+            android:hint="  Date Of Birth"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputAddress"
+        android:layout_width="369dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAge">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputAddress2"
+            android:layout_width="398dp"
+            android:layout_height="55dp"
+            android:drawableLeft="@drawable/homeaddress"
+            android:hint="  Full Address"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputBloodGroup"
+        android:layout_width="369dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAddress">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputBloodGroup2"
+            android:layout_width="398dp"
+            android:layout_height="52dp"
+            android:drawableLeft="@drawable/blood_drop"
+            android:hint="  Blood group"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/password"
+        android:layout_width="381dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputBloodGroup">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/inputPassword2"
+            android:layout_width="358dp"
+            android:layout_height="55dp"
+            android:drawableLeft="@drawable/lock"
+            android:hint="   Password"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="340dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/skylightBlue2"
+        android:drawableRight="@drawable/right_arrow"
+        android:paddingEnd="90dp"
+        android:textAlignment="center"
+        android:text="                  Submit"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>

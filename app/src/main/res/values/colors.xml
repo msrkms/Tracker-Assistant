@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#3498DB</color>
+    <color name="colorPrimary">#2E86C1</color>
+
+    <color name="bluedeep">#3F51B5</color>
+    <color name="bluedeep2">#303F9F</color>
+
+    <color name="PrimaryDark2">#2f333f</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryDark2">#2f333f</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green">#5f8d5e</color>
+    <color name="deepgreen">#2b4c28</color>
+    <color name="skylightBlue">#00e5ff</color>
+    <color name="skylightBlue2">#3498DB</color>
+    <color name="liteBlue">#00B0FF</color>
+    <color name="DeepBlue">#0099cc</color>
+    <color name="fullDeepBlue"> #3b5998</color>
+    <color name="Disable"> #BDC3C7</color>
+    <color name="Red">#e2161a</color>
+    <color name="darkyowll">#FFD600</color>
+    <color name="routineheadingcorner">#da760b</color>
+    <color name="hex">#737699</color>
+    <color name="routineheading">#495db6</color>
+    <color name="Gray">#d8d3d3</color>
+
+    <color name="actionbar">#138D75</color>
+    <color name="actionbar2">#16A085</color>
+    <color name="Green">#065535</color>
+    <color name="actoinbar3">#EC7063</color>
+    <color name="actoinbar4">#F1948A</color>
+    <color name="textcolor">#E74C3C</color>
+
+
+
+</resources>
