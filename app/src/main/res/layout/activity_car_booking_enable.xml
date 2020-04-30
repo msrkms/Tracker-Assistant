@@ -162,7 +162,7 @@
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="106dp"
+                    android:layout_width="116dp"
                     android:layout_height="27dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
@@ -170,10 +170,10 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="17dp"
                     android:layout_marginTop="89dp"
-                    android:layout_marginEnd="183dp"
+                    android:layout_marginEnd="173dp"
                     android:layout_marginBottom="126dp"
-                    android:textSize="16dp"
-                    android:text="Input Mileage :" />
+                    android:text="Input Mileage :"
+                    android:textSize="16dp" />
 
                 <EditText
                     android:id="@+id/editText"
@@ -182,8 +182,8 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="121dp"
-                    android:layout_marginEnd="53dp"
+                    android:layout_marginStart="133dp"
+                    android:layout_marginEnd="41dp"
                     android:layout_marginBottom="120dp"
                     android:ems="10"
                     android:inputType="textPersonName"
