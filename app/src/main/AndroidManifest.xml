@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CarBookingDisableActivity"></activity>
+        <activity android:name=".VehiclesListActivity" />
+        <activity android:name=".CarBookingDisableActivity" />
         <activity android:name=".CarBookingEnableActivity" />
         <activity android:name=".VehiclesBookingActivity" />
         <activity android:name=".HomeActivity" />

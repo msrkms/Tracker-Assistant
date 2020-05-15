@@ -32,6 +32,7 @@ TextView Uname,Uphone,UID;
         UID=findViewById(R.id.ViewId);
 
         viewdata();
+
     }
 
 

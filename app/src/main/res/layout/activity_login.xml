@@ -26,10 +26,12 @@
             android:layout_marginEnd="180dp"
 
             android:text="User Login"
-            android:textColor="@color/skylightBlue2"
+            android:textColor="#4FC0E8"
             android:textSize="40dp"
             android:textStyle="bold" />
     </RelativeLayout>
+
+
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/inputMobile"
@@ -38,7 +40,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="5dp"
         app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -98,9 +100,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="80dp"
-        android:background="@color/skylightBlue2"
-        android:textColor="@android:color/background_light"
-        android:textColorHint="@color/cardview_dark_background"
+        android:background="#4FC0E8"
+        android:textColorHint="#4FC0E8"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -151,6 +152,34 @@
         app:layout_constraintTop_toBottomOf="@+id/textNewAccount"
         app:layout_constraintVertical_bias="0.018" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155" />
+
+    <Spinner
+        android:id="@+id/spinnerUserType"
+        android:layout_width="125dp"
+        android:layout_height="23dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
 
 
 </android.support.constraint.ConstraintLayout>

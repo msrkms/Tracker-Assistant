@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimaryDark">#3498DB</color>
     <color name="colorPrimary">#2E86C1</color>
-
+   <color name="mainForProject">#4FC0E8</color>
     <color name="bluedeep">#3F51B5</color>
     <color name="bluedeep2">#303F9F</color>
 

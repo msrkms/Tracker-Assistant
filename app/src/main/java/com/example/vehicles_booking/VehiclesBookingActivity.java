@@ -62,7 +62,7 @@ public class VehiclesBookingActivity extends AppCompatActivity implements View.O
 
     public void onClick(View v){
        int va2=Integer.parseInt(VA);
-       int va3=1;
+       int va3=0;
         Intent intent;
 
         switch(v.getId()){
