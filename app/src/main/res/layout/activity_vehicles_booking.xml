@@ -90,7 +90,7 @@
             android:padding="14dp"
             android:rowCount="3">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/optionCar"
                 android:layout_width="0dp"
                 android:layout_height="92dp"
@@ -217,10 +217,10 @@
                 </RelativeLayout>
 
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/optionBike"
                 android:layout_width="340dp"
                 android:layout_height="92dp"
@@ -351,10 +351,10 @@
                 </RelativeLayout>
 
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/optionWireless"
                 android:layout_width="340dp"
                 android:layout_height="92dp"
@@ -481,7 +481,7 @@
                 </RelativeLayout>
 
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
         </GridLayout>
 

@@ -4,19 +4,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,9 +22,10 @@ import java.util.List;
 public class CarBookingEnableActivity extends AppCompatActivity  implements View.OnClickListener {
 
     DBconnection dBconnection;
-    Button choose_button;
+    Button choose_button,textdata;
     ImageButton SubmitionButton;
     ArrayAdapter<String>  adapter;
+
 
     private AlertDialog.Builder alertDialogBuilder;
     TextView vehiclesNumber;
@@ -43,10 +40,9 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
 
 
         SubmitionButton=findViewById(R.id.SubmitButton);
-         choose_button=findViewById(R.id.ChooseButton);
+         textdata=findViewById(R.id.ChooseButton);
 
         SubmitionButton.setOnClickListener(this);
-        choose_button.setOnClickListener(this);
 
         viewdataForList();
     }
@@ -58,7 +54,7 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
         switch(v.getId()) {
 
             case R.id.SubmitButton: {
-
+                popup();
                 intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 break;
@@ -102,7 +98,7 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
                 builder.setView(listView);
                 final AlertDialog dialog =builder.create();
                 // Button action for view
-                final Button textdata=(Button) findViewById(R.id.ChooseButton);
+              //  final Button textdata=(Button) findViewById(R.id.ChooseButton);
                 textdata.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -123,18 +119,16 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
 
 
 
-/*
+
     public void popup() {
-     // vehiclesNumber=findViewById(R.id.InputVehicelNumber);
-       //     vehiclesNumber="d2";
         alertDialogBuilder = new AlertDialog.Builder(CarBookingEnableActivity.this);
 
         //for setting title
         alertDialogBuilder.setTitle("Info");
 
         //for setting the message
-        String status= vehiclesNumber.getText().toString();
-        alertDialogBuilder.setMessage("Your "+status+", is not Found .Please Input Again Your Vehicles Number.Otherwise You can't Book vehicles.  Thanks  ");
+        String status= textdata.getText().toString();
+        alertDialogBuilder.setMessage("You Select "+status+", Vehicle .");
 
         //for setting the icon
         //alertDialogBuilder.setIcon(R.drawable.question);
@@ -145,25 +139,15 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-
+              //For close popup
                 dialog.cancel();
 
             }
         });
-
-        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //exit from popup
-                dialog.cancel();
-
-            }
-        });
-
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
 
     }
-*/
+
 }
 

@@ -93,7 +93,7 @@
         android:rowCount="3">
 
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/optionProblemRegistration"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -215,9 +215,9 @@
             </RelativeLayout>
 
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
 
             android:id="@+id/optionBloodHistory"
             android:layout_width="0dp"
@@ -328,7 +328,7 @@
                     android:layout_marginTop="89dp"
                     android:layout_marginEnd="12dp"
                     android:layout_marginBottom="116dp"
-                    android:text="198011"
+                    android:hint="198011"
                     android:textColor="@color/PrimaryDark2"
                     android:textSize="16dp" />
 
@@ -358,7 +358,7 @@
             </RelativeLayout>
 
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
     </GridLayout>

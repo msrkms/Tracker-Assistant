@@ -3,7 +3,7 @@ package com.example.vehicles_booking;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -70,13 +70,13 @@ TextView Uname,Uphone,UID;
             }
             case R.id.OptionSettings:{
 
-                intent=new Intent(this,LoginActivity.class);
+                intent=new Intent(this,AdminChartActivity.class);
                 startActivity(intent);
                 break;
             }
             case R.id.OptionHistory:{
 
-                intent=new Intent(this,RegistrationActivity.class);
+                intent=new Intent(this,AdminHomeActivity.class);
                 startActivity(intent);
                 break;
             }
