@@ -50,7 +50,7 @@ public class VehiclesListActivity extends AppCompatActivity {
 
                 //data add in array from database
                 theList.add(data.getString(1));
-                ListVehiclenumber.add(data.getString(2));
+                ListVehiclenumber.add(data.getString(9));
                   CountLength=CountLength+1;
 
                   //send data CustomerListAdapter Class

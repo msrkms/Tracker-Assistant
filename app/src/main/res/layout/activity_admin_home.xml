@@ -383,7 +383,7 @@
                         android:layout_marginTop="59dp"
                         android:layout_marginEnd="1dp"
                         android:layout_marginBottom="7dp"
-                        android:text="Search"
+                        android:text="All View"
                         android:textAlignment="center"
                         android:textColor="@color/cardview_dark_background"
                         android:textSize="12dp"

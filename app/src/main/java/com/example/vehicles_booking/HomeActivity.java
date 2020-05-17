@@ -10,10 +10,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class HomeActivity extends AppCompatActivity  implements View.OnClickListener {
     DBconnection dBconnection;
     RelativeLayout Booking,Settings,History,Member_info;
     TextView Uname,Uphone,UID;
+    Random code;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +39,22 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
 
         Uname=findViewById(R.id.ViewName);
         Uphone=findViewById(R.id.ViewPhone);
-        UID=findViewById(R.id.ViewId);
+        UID=findViewById(R.id.ViewUId);
 
         viewdata();
 
+        code =new Random();
+        int max,min,sendCode;
+        String codeStore;
+        String Hige,Low;
+        Hige="20000";
+        Low="10000";
+        max=Integer.parseInt(Hige);
+
+        min=Integer.parseInt(Low);
+        sendCode=code.nextInt((max-min)+1)+min;
+        codeStore="BAF"+sendCode;
+        UID.setText(codeStore);
     }
 
 
@@ -77,7 +92,7 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
             }
             case R.id.OptionSettings:{
 
-                intent=new Intent(this,VehiclesListActivity.class);
+                intent=new Intent(this,LoginActivity.class);
                 startActivity(intent);
                 break;
             }
