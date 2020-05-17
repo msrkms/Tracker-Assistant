@@ -25,8 +25,6 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
     Button choose_button,textdata;
     ImageButton SubmitionButton;
     ArrayAdapter<String>  adapter;
-
-
     private AlertDialog.Builder alertDialogBuilder;
     TextView vehiclesNumber;
 
@@ -37,7 +35,9 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_booking_enable);
 
-
+        //action bar name and back button(also change to ("AndoidManifest.xml")
+        getSupportActionBar().setTitle("Vehicle Booking");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         SubmitionButton=findViewById(R.id.SubmitButton);
          textdata=findViewById(R.id.ChooseButton);

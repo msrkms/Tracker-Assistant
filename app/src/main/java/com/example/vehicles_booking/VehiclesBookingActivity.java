@@ -20,6 +20,9 @@ public class VehiclesBookingActivity extends AppCompatActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicles_booking);
 
+        //action bar name and back button(also change to ("AndoidManifest.xml")
+        getSupportActionBar().setTitle("Vehicle Booking");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         car=findViewById(R.id.optionCar);
         bike=findViewById(R.id.optionBike);

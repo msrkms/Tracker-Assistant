@@ -14,6 +14,9 @@ public class AddVehiclesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_vehicles);
 
+        //action bar name and back button(also change to ("AndoidManifest.xml")
+        getSupportActionBar().setTitle("Add Vehicle");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Dropdownlist();
     }
 

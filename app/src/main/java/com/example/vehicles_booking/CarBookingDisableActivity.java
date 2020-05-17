@@ -18,6 +18,9 @@ public class CarBookingDisableActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_booking_disable);
+        //action bar name and back button(also change to ("AndoidManifest.xml")
+        getSupportActionBar().setTitle("Vehicle Booking");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         name=findViewById(R.id.ViewName);
         id=findViewById(R.id.ViewId);

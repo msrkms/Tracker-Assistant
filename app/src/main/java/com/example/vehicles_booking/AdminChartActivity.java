@@ -22,6 +22,11 @@ public class AdminChartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_chart);
+
+        //action bar name and back button(also change to ("AndoidManifest.xml")
+        getSupportActionBar().setTitle("View Statistics");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //add pieChart
         PieChart pieChart=findViewById(R.id.pieChart);
         ArrayList<PieEntry> vehicles=new ArrayList<>();

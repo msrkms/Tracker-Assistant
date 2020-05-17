@@ -12,11 +12,18 @@ import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity  implements View.OnClickListener {
     DBconnection dBconnection;
- RelativeLayout Booking,Settings,History,Member_info;
-TextView Uname,Uphone,UID;
+    RelativeLayout Booking,Settings,History,Member_info;
+    TextView Uname,Uphone,UID;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        //action bar name and back button(also change to ("AndoidManifest.xml")
+        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         Booking=findViewById(R.id.OptionBooking);
         Settings=findViewById(R.id.OptionSettings);
         History=findViewById(R.id.OptionHistory);
@@ -70,7 +77,7 @@ TextView Uname,Uphone,UID;
             }
             case R.id.OptionSettings:{
 
-                intent=new Intent(this,AdminChartActivity.class);
+                intent=new Intent(this,VehiclesListActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -81,6 +88,12 @@ TextView Uname,Uphone,UID;
                 break;
             }
 
+            case R.id.OptionMemberInfo:{
+
+                intent=new Intent(this,RegistrationActivity.class);
+                startActivity(intent);
+                break;
+            }
 
 
         }

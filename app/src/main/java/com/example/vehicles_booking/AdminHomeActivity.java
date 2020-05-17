@@ -25,6 +25,9 @@ public class AdminHomeActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
+        //action bar name and back button(also change to ("AndoidManifest.xml")
+        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         barchart();
 
@@ -50,7 +53,7 @@ public class AdminHomeActivity extends AppCompatActivity implements View.OnClick
 
             case R.id.OptionCostView:{
 
-                intent=new Intent(this,VehiclesBookingActivity.class);
+                intent=new Intent(this,VehiclesListActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -62,7 +65,7 @@ public class AdminHomeActivity extends AppCompatActivity implements View.OnClick
             }
             case R.id.OptionSearch:{
 
-                intent=new Intent(this,AdminHomeActivity.class);
+                intent=new Intent(this,AdminSearchPageActivity.class);
                 startActivity(intent);
                 break;
             }
