@@ -31,6 +31,8 @@ dependencies {
 
     //add for charts
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //For recyclerViw
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
 
 }

@@ -1,19 +1,27 @@
 package com.example.vehicles_booking;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CarBookingDisableActivity extends AppCompatActivity {
+public class CarBookingDisableActivity extends AppCompatActivity implements View.OnClickListener {
+
 
     DBconnection dBconnection;
     private AlertDialog.Builder alertDialogBuilder;
+    EditText EndMileage;
      TextView name,id;
+     ImageButton BookingEnd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +32,32 @@ public class CarBookingDisableActivity extends AppCompatActivity {
 
         name=findViewById(R.id.ViewName);
         id=findViewById(R.id.ViewId);
+        BookingEnd=findViewById(R.id.buttonBookingEnd);
+        BookingEnd.setOnClickListener(this);
 
-    viewdata();
-    popup();
+        viewdata();
+        popup();
     }
+
+
+    public void onClick(View v){
+
+        Intent intent;
+
+        switch(v.getId()) {
+
+            case R.id.buttonBookingEnd: {
+
+                updatedata();
+                intent = new Intent(this, CarBookingEnableActivity.class);
+                startActivity(intent);
+                break;
+            }
+
+        }
+
+    }
+
 
 
     public void viewdata(){
@@ -47,6 +77,26 @@ public class CarBookingDisableActivity extends AppCompatActivity {
         } else {
 
             Toast.makeText(this, "No data is found", Toast.LENGTH_LONG);
+
+        }
+    }
+
+    public void updatedata(){
+        String phonenumber=DataHolder.Phone;
+        SQLiteDatabase sqLiteDB= dBconnection.getWritableDatabase();
+        String Enable="0";
+        EndMileage=findViewById(R.id.InputEndMileage);
+
+
+        if (EndMileage.equals("")){
+
+
+            Toast.makeText(this,"Must input End mileage",Toast.LENGTH_SHORT).show();
+
+        }
+        else {
+            //update qury
+            sqLiteDB.execSQL("UPDATE  patient SET pheight='"+Enable+"' WHERE pphone_number='"+phonenumber+"'");
 
         }
     }

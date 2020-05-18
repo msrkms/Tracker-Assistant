@@ -235,5 +235,44 @@ public class DBconnection extends SQLiteOpenHelper {
 
     }
 
+
+
+    public  Boolean findPassword2 ( String uname, String upassword){
+
+        SQLiteDatabase sqLiteDatabase= this.getReadableDatabase();
+
+        Cursor cursor =sqLiteDatabase.rawQuery("SELECT * FROM "+ TABLE_NAME,null);
+        Boolean result2=false;
+
+        if (cursor.getCount()==0)
+        {
+
+            Toast.makeText(context,"No data is found",Toast.LENGTH_LONG);
+        }
+        else {
+
+            while (cursor.moveToNext()){
+
+
+                String username= cursor.getString(2) ;
+                String password= cursor.getString(9) ;
+
+
+                if(username.equals(uname) && password.equals(upassword)){
+
+                    result2 =true;
+                    break;
+                }
+            }
+
+        }
+        return result2;
+    }
+
+
+
+
+
+
 }
 

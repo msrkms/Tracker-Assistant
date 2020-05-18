@@ -2,12 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vehicles_booking">
 
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,15 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".UserProfileActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".AddVehiclesActivity" />
         <activity android:name=".AdminHomeActivity" />
         <activity android:name=".AdminChartActivity" />
         <activity android:name=".AdminSearchPageActivity" />
         <activity android:name=".VehiclesListActivity" />
         <activity android:name=".CarBookingDisableActivity" />
-        <activity android:name=".CarBookingEnableActivity" />
-        <activity android:name=".VehiclesBookingActivity" />
+        <activity
+            android:name=".CarBookingEnableActivity"
+            android:parentActivityName=".VehiclesBookingActivity"></activity>
+        <activity
+            android:name=".VehiclesBookingActivity"
+            android:parentActivityName=".HomeActivity"></activity>
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
@@ -35,5 +34,11 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
 </manifest>

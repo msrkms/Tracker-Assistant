@@ -1,6 +1,9 @@
 package com.example.vehicles_booking;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -21,6 +25,11 @@ public class AdminSearchPageActivity extends AppCompatActivity implements View.O
     DBconnection dBconnection;
     Spinner spinner,sp;
     ImageButton submit;
+
+    //for recycel view
+    RecyclerView recyclerView;
+    ArrayList<RecyclerViewMainModel> RMainModels;
+    CustomRecyclerAdapter customRecyclerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +37,43 @@ public class AdminSearchPageActivity extends AppCompatActivity implements View.O
         //sp=findViewById(R.id.spinnerSearchType);
         submit=findViewById(R.id.SubmitButton);
 
+
         submit.setOnClickListener(this);
+        RecycelView();
         Dropdownlist();
         DataViewForList();
 
     }
+
+
+    public void RecycelView(){
+
+        //For Recycler View need 2 extra class(Here CustomRecyclerAdapter and recyclerMainModel)
+        //Also needed 1 extra XML file (Here recycler_row_item)
+
+        recyclerView=findViewById(R.id.recycler_view);
+
+        //Store pic in Array
+        Integer[] pic={R.drawable.user,R.drawable.vespa,R.drawable.setting,R.drawable.search,R.drawable.car,R.drawable.add};
+
+        //this loop for all pic store in Recycler Main Model
+        RMainModels=new ArrayList<>();
+         for (int i=0; i<pic.length;i++){
+             RecyclerViewMainModel mobel =new RecyclerViewMainModel(pic[i]);
+             RMainModels.add(mobel);
+
+                   }
+         //For Design Horizontal Layout
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager( this,LinearLayoutManager.HORIZONTAL,false);
+         recyclerView.setLayoutManager(linearLayoutManager);
+         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+         //Initialize CustomRecyclerAdapter
+        customRecyclerAdapter=new CustomRecyclerAdapter(this,RMainModels);
+        recyclerView.setAdapter(customRecyclerAdapter);
+    }
+
+
 
     public void Dropdownlist(){
         String[] VehiclesList={"User","Vehicle"};
@@ -40,9 +81,8 @@ public class AdminSearchPageActivity extends AppCompatActivity implements View.O
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,VehiclesList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
-
     }
+
 
     public void onClick(View v){
 
@@ -59,18 +99,9 @@ public class AdminSearchPageActivity extends AppCompatActivity implements View.O
 
 
                 break;
-
-
             }
-
         }
-
     }
-
-
-
-
-
 
 
 
@@ -102,9 +133,6 @@ public class AdminSearchPageActivity extends AppCompatActivity implements View.O
                 CustomListAdapter customListAdapter =new CustomListAdapter(this,theList,ListVehiclenumber,CountLength);
                 listView.setAdapter(customListAdapter);
             }
-
         }
     }
-
-
 }

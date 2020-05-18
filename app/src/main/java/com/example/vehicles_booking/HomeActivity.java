@@ -92,7 +92,7 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
             }
             case R.id.OptionSettings:{
 
-                intent=new Intent(this,LoginActivity.class);
+                intent=new Intent(this,UserProfileActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
 
             case R.id.OptionMemberInfo:{
 
-                intent=new Intent(this,RegistrationActivity.class);
+                intent=new Intent(this,LoginActivity.class);
                 startActivity(intent);
                 break;
             }

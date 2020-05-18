@@ -26,7 +26,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     EditText txt_maessage,Favourite_number,Favourite_person;
     private String massage;
-    private String testNumber="01675977369";
+    //private String testNumber="01675977369";
     private AlertDialog.Builder alertDialogBuilder;
     String codeStore;
     DBconnection dBconnection;
@@ -151,6 +151,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         }
         else {
+            //update qury
             sqLiteDB.execSQL("UPDATE  patient SET password='"+codeStore+"' WHERE pphone_number='"+phonenumber+"'");
 
         }

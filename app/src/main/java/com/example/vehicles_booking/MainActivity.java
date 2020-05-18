@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
                 public void run() {
 
-                    Intent mySuperIntent = new Intent(MainActivity.this, HomeActivity.class);
+                    Intent mySuperIntent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(mySuperIntent);
 
                     finish();

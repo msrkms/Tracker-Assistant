@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
     DBconnection dBconnection;
     Button choose_button,textdata;
     ImageButton SubmitionButton;
+    EditText EditMileage;
     ArrayAdapter<String>  adapter;
     private AlertDialog.Builder alertDialogBuilder;
     TextView vehiclesNumber;
@@ -55,7 +57,8 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
 
             case R.id.SubmitButton: {
                 popup();
-                intent = new Intent(this, LoginActivity.class);
+                updatedata();
+                intent = new Intent(this, VehiclesBookingActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -116,6 +119,27 @@ public class CarBookingEnableActivity extends AppCompatActivity  implements View
 
 
                         }
+
+    public void updatedata(){
+        String phonenumber=DataHolder.Phone;
+        SQLiteDatabase sqLiteDB= dBconnection.getWritableDatabase();
+        String Disable="143";
+        EditMileage=findViewById(R.id.editMileage);
+        choose_button=findViewById(R.id.ChooseButton);
+
+        if (EditMileage.equals("")||choose_button.equals("")){
+
+
+            Toast.makeText(this,"Must input Favourite Number and Favourite Person",Toast.LENGTH_SHORT).show();
+
+        }
+        else {
+            //update qury
+            sqLiteDB.execSQL("UPDATE  patient SET pheight='"+Disable+"' WHERE pphone_number='"+phonenumber+"'");
+
+        }
+    }
+
 
 
 

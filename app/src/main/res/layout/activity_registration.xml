@@ -52,7 +52,7 @@
             android:id="@+id/inputName2"
             android:layout_width="398dp"
             android:layout_height="55dp"
-            android:drawableLeft="@drawable/malep"
+            android:drawableLeft="@drawable/user_sma"
             android:hint="  Full Name"
             android:inputType="textEmailAddress"
             android:paddingLeft="10dp"
@@ -73,7 +73,7 @@
             android:id="@+id/inputMobile2"
             android:layout_width="398dp"
             android:layout_height="55dp"
-            android:drawableLeft="@drawable/mobile_phone"
+            android:drawableLeft="@drawable/phone_s"
             android:hint="  Mobile Number "
 
             android:inputType="textEmailAddress"
@@ -98,6 +98,7 @@
             android:layout_height="55dp"
             android:hint="  Date Of Birth"
             android:inputType="text"
+            android:drawableLeft="@drawable/phone_s"
             android:paddingLeft="10dp"
             android:textSize="20dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -119,6 +120,7 @@
             android:layout_height="55dp"
             android:hint="  Full Address"
             android:inputType="text"
+            android:drawableLeft="@drawable/location_s"
             android:paddingLeft="10dp"
             android:textSize="20dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -140,6 +142,7 @@
             android:layout_height="52dp"
             android:hint="  Blood group"
             android:inputType="text"
+            android:drawableLeft="@drawable/blood_s"
             android:paddingLeft="10dp"
             android:textSize="20dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -159,6 +162,7 @@
             android:layout_width="358dp"
             android:layout_height="55dp"
             android:hint="   Password"
+            android:drawableLeft="@drawable/look_s"
             android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:textSize="20dp" />

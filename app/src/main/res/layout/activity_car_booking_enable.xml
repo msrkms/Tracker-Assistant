@@ -195,7 +195,7 @@
                     android:textSize="16dp" />
 
                 <EditText
-                    android:id="@+id/editM"
+                    android:id="@+id/editMileage"
                     android:layout_width="165dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
