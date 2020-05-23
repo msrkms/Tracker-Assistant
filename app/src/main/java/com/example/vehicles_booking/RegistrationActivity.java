@@ -56,8 +56,8 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             // Toast.makeText(getApplicationContext(),"Row"+rowid+" is insert",Toast.LENGTH_SHORT).show();
             popup();//popup window
 
-            intent = new Intent(this, RegistrationActivity.class);
-            startActivity(intent);
+           // intent = new Intent(this, RegistrationActivity.class);
+         //   startActivity(intent);
 
 
         } else {

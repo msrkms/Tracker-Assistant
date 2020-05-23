@@ -2,23 +2,34 @@ package com.example.vehicles_booking;
 
 import android.content.Intent;
 import android.os.Handler;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
+
+
 
 public class MainActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME = 2000;
-  //  DBconnection dBconnection;
+    DBconnection dBconnection;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //if (!isConnected(MainActivity.this))buildDialog(MainActivity.this).show();
-       // else {
+        if (!isConnected(MainActivity.this))buildDialog(MainActivity.this).show();
+        else {
             setContentView(R.layout.activity_main);
 
-        //    dBconnection=new DBconnection(this);
-         //   SQLiteDatabase sqLiteDatabase=dBconnection.getWritableDatabase();
+            dBconnection=new DBconnection(this);
+            SQLiteDatabase sqLiteDatabase=dBconnection.getWritableDatabase();
 
             new Handler().postDelayed(new Runnable() {
 
@@ -32,10 +43,8 @@ public class MainActivity extends AppCompatActivity {
             }, SPLASH_TIME);
 
         }
-
-
     }
- /*
+
     public boolean isConnected(Context context) {
 
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -55,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(c);
         builder.setTitle("No Internet Connection");
-        builder.setMessage("You need to have Mobile Data or wifi to access this APP . Press ok to Exit");
+        builder.setMessage("You need to have Mobile Data or WiFi to access this APP . Press ok to Exit");
 
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
@@ -68,4 +77,4 @@ public class MainActivity extends AppCompatActivity {
 
         return builder;
     }
-    */
+}

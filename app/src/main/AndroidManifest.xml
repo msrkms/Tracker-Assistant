@@ -11,11 +11,17 @@
         android:theme="@style/AppTheme">
         <activity android:name=".UserProfileActivity"></activity>
         <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".AddVehiclesActivity" />
+        <activity
+            android:name=".AddVehiclesActivity"
+            android:parentActivityName=".AdminHomeActivity" ></activity>
         <activity android:name=".AdminHomeActivity" />
         <activity android:name=".AdminChartActivity" />
-        <activity android:name=".AdminSearchPageActivity" />
-        <activity android:name=".VehiclesListActivity" />
+        <activity
+            android:name=".AdminSearchPageActivity"
+            android:parentActivityName=".AdminHomeActivity" ></activity>
+        <activity
+            android:name=".VehiclesListActivity"
+            android:parentActivityName=".AdminHomeActivity" ></activity>
         <activity android:name=".CarBookingDisableActivity" />
         <activity
             android:name=".CarBookingEnableActivity"
@@ -40,5 +46,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
 </manifest>

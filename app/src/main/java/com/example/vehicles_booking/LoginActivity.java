@@ -1,8 +1,17 @@
 package com.example.vehicles_booking;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +22,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,7 +39,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Spinner spinner;
     ImageButton SignIn;
     TextView forgot,createNewUser;
+    String CurrentAddress,CurrentLocation,CurrentCounty;
     int record;
+    FusedLocationProviderClient  fusedLocationProviderClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
@@ -45,9 +65,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         createNewUser.setOnClickListener(this);
         SignIn.setOnClickListener(this);
 
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+      //  CurrentLocation();
         Dropdownlist();
     }
+
+
+
+
+
+
+
 
     public void Dropdownlist(){
         String[] VehiclesList={"Normal","Admin"};
@@ -73,18 +102,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         record=1;
                         break;
                     }
-
                 }
-
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
-
     }
+
+
 
 
 
@@ -119,8 +146,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     if(result==true){
 
                         DataHolder.Phone=usermobile;
-                        intent=new Intent(this,HomeActivity.class);
-                        startActivity(intent);
+                      //  updatedata();//updata data
+                         intent=new Intent(this,HomeActivity.class);
+                          startActivity(intent);
 
                     } else{
 
@@ -149,4 +177,93 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         }
     }
+/*
+    public void updatedata(){
+        // String phonenumber=DataHolder.Phone;
+        SQLiteDatabase sqLiteDB= dBconnection.getWritableDatabase();
+        umobile=findViewById(R.id.inputMobile2);
+        String us=umobile.toString();
+        String CA=CurrentAddress.toString();
+        String CL=CurrentLocation.toString();
+        String CC=CurrentCounty.toString();
+
+        if (umobile.equals("")){
+
+
+            Toast.makeText(this,"Must input Favourite Number and Favourite Person",Toast.LENGTH_SHORT).show();
+
+        }
+        else {
+            //update qury
+            sqLiteDB.execSQL("UPDATE  patient SET pbmi='"+ CA +"',pbmr='"+ CL +"',pbp='"+ CC +"' WHERE pphone_number='"+us+"'");
+
+        }
     }
+
+ */
+
+
+   //for location track
+/*
+    public void CurrentLocation(){
+
+        //Check Permission
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
+
+            //when permission granted
+            getLocation();
+        }
+        else{
+
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
+
+        }
+
+
+    }
+
+     */
+
+  //  get Location from GOOGLE GPS
+    private void getLocation(){
+
+        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+                //Initialize location
+                Location location =task.getResult();
+                if (location!=null){
+
+                    //Initialize geoCoder
+                    Geocoder geocoder= new Geocoder(LoginActivity.this, Locale.getDefault());
+                    //Initialize  address list
+                    try {
+                        List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+
+                        //Set data
+                      /*CurrentCounty=addresses.get(0).getCountryName().toString();
+                        CurrentLocation=addresses.get(0).getLocality().toString();
+                       CurrentAddress=addresses.get(0).getAddressLine(0).toString();
+
+                       */
+
+                        // DataHolder.CurrentCounty=country.toString();
+                        // DataHolder.CurrentLocation=addresses.get(0).getLocality().toString();
+                        //DataHolder.CurrentAddress=addresses.get(0).getAddressLine(0).toString();
+
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        });
+    }
+
+
+
+
+
+
+}

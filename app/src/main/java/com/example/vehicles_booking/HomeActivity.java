@@ -55,6 +55,7 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
         sendCode=code.nextInt((max-min)+1)+min;
         codeStore="BAF"+sendCode;
         UID.setText(codeStore);
+
     }
 
 
@@ -98,15 +99,15 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
             }
             case R.id.OptionHistory:{
 
-                intent=new Intent(this,AdminHomeActivity.class);
-                startActivity(intent);
+             //   intent=new Intent(this,AdminHomeActivity.class);
+               // startActivity(intent);
                 break;
             }
 
             case R.id.OptionMemberInfo:{
 
-                intent=new Intent(this,LoginActivity.class);
-                startActivity(intent);
+             //   intent=new Intent(this,LoginActivity.class);
+            //    startActivity(intent);
                 break;
             }
 
