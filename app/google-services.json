@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "254606443752",
+    "firebase_url": "https://vehiclesbooking-163b2.firebaseio.com",
+    "project_id": "vehiclesbooking-163b2",
+    "storage_bucket": "vehiclesbooking-163b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254606443752:android:888a29730990ae1055355d",
+        "android_client_info": {
+          "package_name": "com.example.vehicles_booking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254606443752-hott0f9vdd8mcsg0c13vattng0rd9sea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vehicles_booking",
+            "certificate_hash": "5b0a1b317b7dc5eeb64904247278f259e5a63f27"
+          }
+        },
+        {
+          "client_id": "254606443752-laqp1rj00l3g5brk3apl07vhacon9e4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG0Tylog6uhpY9ufk-lnflhpJFcdN3RJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254606443752-laqp1rj00l3g5brk3apl07vhacon9e4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

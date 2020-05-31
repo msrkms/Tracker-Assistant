@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CarBookingDisableActivity"
-    android:background="#F0F4C3"
+    android:background="#F4F6F7"
+
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:weightSum="10"
     >
+
+
 
 
 
@@ -39,7 +46,7 @@
             android:layout_marginEnd="32dp"
             android:text="Suharto Das"
             android:textColor="@color/white"
-            android:textSize="35dp"
+            android:textSize="32dp"
             android:textStyle="bold" />
 
 
@@ -62,8 +69,8 @@
 
         <TextView
             android:id="@+id/ViewId"
-            android:layout_width="296dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -75,7 +82,7 @@
             android:layout_marginBottom="27dp"
             android:text="171351980"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="28dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
@@ -86,7 +93,7 @@
         android:layout_alignParentStart="true"
         android:layout_weight="7.25"
         android:alignmentMode="alignMargins"
-        android:background="#F0F4C3"
+        android:background="#F4F6F7"
         android:columnCount="1"
         android:columnOrderPreserved="false"
         android:padding="14dp"
@@ -363,3 +370,4 @@
 
     </GridLayout>
 </LinearLayout>
+</ScrollView>

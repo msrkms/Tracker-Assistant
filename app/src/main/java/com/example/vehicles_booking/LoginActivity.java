@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
             case R.id.textNewAccount: {
 
-                intent = new Intent(this, RegistrationActivity.class);
+                intent = new Intent(this, RegisterActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -225,7 +225,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      */
 
   //  get Location from GOOGLE GPS
-    private void getLocation(){
+  /*  private void getLocation(){
 
         fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
             @Override
@@ -252,14 +252,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         //DataHolder.CurrentAddress=addresses.get(0).getAddressLine(0).toString();
 
 
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+        //            }
+       //             catch (IOException e) {
+       //                 e.printStackTrace();
+       //             }
 
-                }
-            }
-        });
-    }
+    //            }
+    //        }
+     //   });
+
+  //  }
+
+
+
 
 
 
@@ -267,3 +272,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
 }
+
