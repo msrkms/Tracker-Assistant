@@ -105,7 +105,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         Favourite_number=findViewById(R.id.FavouriteNumber);
 
-        // This condition for checke Favourite_number,whhen Favourite_number is not null that time this code work
+        // This condition for checke Favourite_number,when Favourite_number is not null that time this code work
         if(!Favourite_number.getText().toString().equals("")){
             SmsManager smsManager=SmsManager.getDefault();
             smsManager.sendTextMessage(Mobile,null,massage,null,null);

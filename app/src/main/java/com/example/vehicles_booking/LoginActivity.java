@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
             case R.id.textNewAccount: {
 
-                intent = new Intent(this, RegisterActivity.class);
+                intent = new Intent(this, RegistrationActivity.class);
                 startActivity(intent);
                 break;
             }

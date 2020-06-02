@@ -40,6 +40,8 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 String phonenumber = "+" + code + number;
+                String UserPhoneNumber="0"+number;
+                DataHolder.Phone=UserPhoneNumber;//store mobile number
 
                 Intent intent = new Intent(RegisterActivity.this, OtpActivity.class);
                 intent.putExtra("phonenumber", phonenumber);

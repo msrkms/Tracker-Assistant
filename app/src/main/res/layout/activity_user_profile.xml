@@ -13,6 +13,16 @@
      android:background="@color/mainForProject"
      android:padding="20dp">
 
+
+     <de.hdodenhof.circleimageview.CircleImageView
+         android:id="@+id/UserPhoto"
+         android:layout_width="150dp"
+         android:layout_height="150dp"
+         android:layout_marginTop="5dp"
+         android:layout_centerHorizontal="true"
+         android:src="@drawable/userde" />
+
+
  </RelativeLayout>
 
 
@@ -227,6 +237,7 @@
             android:layout_gravity="right"
             android:paddingRight="55dp">
         <ImageView
+            android:id="@+id/EditBtn"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:padding="5dp"

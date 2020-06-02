@@ -96,18 +96,9 @@ public class VehiclesBookingActivity extends AppCompatActivity implements View.O
                 startActivity(intent);
                 break;
             }
-
-
-
         }
 
     }
-
-
-
-
-
-
 
 }
 
