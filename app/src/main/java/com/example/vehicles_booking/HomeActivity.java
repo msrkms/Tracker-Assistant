@@ -3,20 +3,30 @@ package com.example.vehicles_booking;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity  implements View.OnClickListener {
     DBconnection dBconnection;
     RelativeLayout Booking,Settings,History,Member_info;
-    TextView Uname,Uphone,UID;
+    TextView Uname,Uphone,UID,Details;
     Random code;
+
+
+    ImageView userPhoto;
+    private FirebaseStorage storage;
+    private StorageReference storageReference;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,17 +41,24 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
         Settings=findViewById(R.id.OptionSettings);
         History=findViewById(R.id.OptionHistory);
         Member_info=findViewById(R.id.OptionMemberInfo);
+        Details=findViewById(R.id.View5);
 
         Booking.setOnClickListener(this);
         Settings.setOnClickListener(this);
         History.setOnClickListener(this);
         Member_info.setOnClickListener(this);
+        Details.setOnClickListener(this);
 
         Uname=findViewById(R.id.ViewName);
         Uphone=findViewById(R.id.ViewPhone);
         UID=findViewById(R.id.ViewUId);
 
+        userPhoto=findViewById(R.id.HomeUserPhoto);
+
+
         viewdata();
+        //getImage();
+
 
         code =new Random();
         int max,min,sendCode;
@@ -110,11 +127,51 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
             //    startActivity(intent);
                 break;
             }
+            case R.id.View5:{
+
+                  intent=new Intent(this,UserProfileActivity.class);
+                   startActivity(intent);
+                break;
+            }
 
 
         }
 
     }
+
+/*
+    private void getImage(){
+
+        storage= FirebaseStorage.getInstance();
+        storageReference=storage.getReferenceFromUrl("gs://vehiclesbooking-163b2.appspot.com/image/").child("091a98fa-1980-482b-abc1-d8dcee0fd1ed.JPG");
+
+        try{
+            final File file= File.createTempFile("image","jpg");
+            storageReference.getFile(file).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    Bitmap Homebitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+                    userPhoto.setImageBitmap(Homebitmap);
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(HomeActivity.this,"Image Falied to load",Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
+ */
+
+
+
 
 }
 

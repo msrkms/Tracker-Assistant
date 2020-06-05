@@ -27,7 +27,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/optionWireles2"
-                android:layout_width="340dp"
+                android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -191,7 +191,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/optionWireless"
-                android:layout_width="340dp"
+                android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
@@ -240,7 +240,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/optionBike"
-                android:layout_width="340dp"
+                android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"

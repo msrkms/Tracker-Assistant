@@ -1,22 +1,32 @@
 package com.example.vehicles_booking;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-
-import com.google.android.material.textfield.TextInputEditText;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextInputEditText userName, userPhoneNumber, userAge, userAddress, userBloodGroup, userPassword;
-    private Button registration;
+    private Button registration,dateOfBrith;
     UserRegistrationDetails userRegistrationDetails;
     int age;
+    DatePickerDialog.OnDateSetListener dateSetListener1,dateSetListener2;
     long ageFromdate;
 
 
@@ -28,7 +38,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_registration);
         userName = findViewById(R.id.inputName2);
         userPhoneNumber = findViewById(R.id.inputMobile2);
-        userAge = findViewById(R.id.inputAge2);
+        //userAge = findViewById(R.id.inputAge2);
         userBloodGroup = findViewById(R.id.inputBloodGroup2);
         userAddress = findViewById(R.id.inputAddress2);
         userPassword = findViewById(R.id.inputPassword2);
@@ -39,8 +49,48 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
 
         registration.setOnClickListener(this);
 
+        dateOfBrith=findViewById(R.id.buttonDateOfBrith);
+
+
+        dateOfBirth();
 
     }
+
+
+
+    public void dateOfBirth(){
+
+        Calendar calendar=Calendar.getInstance();
+        final int year=calendar.get(Calendar.YEAR);
+        final int month=calendar.get(Calendar.MONTH);
+        final int day=calendar.get(Calendar.DAY_OF_MONTH);
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
+        dateOfBrith.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog=new DatePickerDialog(
+                        RegistrationActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        dateSetListener2,year,month,day);
+
+          //      datePickerDialog.getWindow();
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                datePickerDialog.show();
+
+            }
+        });
+
+        dateSetListener2=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int Year, int Month, int Day) {
+
+                Month = Month+1;
+                String date= Day+"/"+ Month +"/"+Year;
+                dateOfBrith.setText(date);
+            }
+        };
+    }
+
+
 
 
     public void onClick(View view) {
@@ -59,14 +109,11 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
            // intent = new Intent(this, RegistrationActivity.class);
          //   startActivity(intent);
 
-
         } else {
             Toast.makeText(getApplicationContext(), "NO DATA INSERT", Toast.LENGTH_SHORT).show();
 
         }
     }
-
-
 
 
     private void localDataSave() {
@@ -97,6 +144,13 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         userRegistrationDetails.setpEmargencyNumber1(Emargency_Number1);
         userRegistrationDetails.setpEmargencyNumber2(Emargency_number2);
     }
+
+
+
+
+
+
+
     public void popup() {
 
         alertDialogBuilder = new AlertDialog.Builder(RegistrationActivity.this);

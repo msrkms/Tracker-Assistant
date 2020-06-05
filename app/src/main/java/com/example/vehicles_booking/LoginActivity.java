@@ -1,35 +1,21 @@
 package com.example.vehicles_booking;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.sqlite.SQLiteDatabase;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,6 +28,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     String CurrentAddress,CurrentLocation,CurrentCounty;
     int record;
     FusedLocationProviderClient  fusedLocationProviderClient;
+    private AlertDialog.Builder alertDialogBuilder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
@@ -70,11 +58,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
       //  CurrentLocation();
         Dropdownlist();
     }
-
-
-
-
-
 
 
 
@@ -110,7 +93,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
-
 
 
 

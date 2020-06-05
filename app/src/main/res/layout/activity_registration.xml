@@ -10,6 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+
     >
 
 
@@ -38,7 +39,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputName"
-        android:layout_width="match_parent"
+        android:layout_width="369dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
         >
@@ -71,24 +72,37 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputAge"
-        android:layout_width="360dp"
+        android:layout_width="369dp"
         android:layout_height="60dp"
         app:errorEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail">
+        >
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputAge2"
-            android:layout_width="360dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Date of Birth:"
+            android:layout_marginStart="08dp"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/calendar"
+            />
+
+
+        <Button
+            android:id="@+id/buttonDateOfBrith"
+            android:layout_width="wrap_content"
             android:layout_height="55dp"
-            android:hint="  Date Of Birth"
-            android:inputType="text"
-            android:drawableLeft="@drawable/phone_s"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="-40dp"
+            android:backgroundTint="@color/mainForProject"
+            android:drawableRight="@drawable/arrow_down"
+            android:hint=" Select "
             android:paddingLeft="10dp"
-            android:textSize="20dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18dp" />
 
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputAddress"
@@ -124,6 +138,7 @@
             android:layout_height="52dp"
             android:hint="  Blood group"
             android:inputType="text"
+            android:textAllCaps="true"
             android:drawableLeft="@drawable/blood_s"
             android:paddingLeft="10dp"
             android:textSize="20dp" />
@@ -131,7 +146,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
-        android:layout_width="381dp"
+        android:layout_width="369dp"
         android:layout_height="63dp"
 
         app:errorEnabled="true"
@@ -140,7 +155,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPassword2"
-            android:layout_width="358dp"
+            android:layout_width="398dp"
             android:layout_height="55dp"
             android:hint="   Password"
             android:drawableLeft="@drawable/look_s"

@@ -11,8 +11,9 @@ import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
-
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private static int SPLASH_TIME = 2000;
     DBconnection dBconnection;
 
-
+   ImageView imageView;
+   Animation LeftToRight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
             dBconnection=new DBconnection(this);
             SQLiteDatabase sqLiteDatabase=dBconnection.getWritableDatabase();
 
+            imageView=findViewById(R.id.imageMain);
+            LeftToRight= AnimationUtils.loadAnimation(this,R.anim.left_to_right);
+            imageView.setAnimation(LeftToRight);
             new Handler().postDelayed(new Runnable() {
 
                 public void run() {
