@@ -26,11 +26,11 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     private Button registration,dateOfBrith;
     UserRegistrationDetails userRegistrationDetails;
     int age;
-    DatePickerDialog.OnDateSetListener dateSetListener1,dateSetListener2;
     long ageFromdate;
 
-
     DBconnection dBconnection;
+
+    DatePickerDialog.OnDateSetListener dateSetListener1,dateSetListener2;
     private AlertDialog.Builder alertDialogBuilder;
 
     protected void onCreate(Bundle savedInstanceState) {

@@ -39,13 +39,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputName"
-        android:layout_width="369dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputName2"
-            android:layout_width="398dp"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:drawableLeft="@drawable/user_sma"
             android:hint="  Full Name"
@@ -55,17 +55,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputEmail"
-        android:layout_width="369dp"
+        android:id="@+id/inputAddress"
+        android:layout_width="match_parent"
         android:layout_height="60dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputMobile2"
-            android:layout_width="398dp"
+            android:id="@+id/inputAddress2"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:drawableLeft="@drawable/phone_s"
-            android:hint="  Mobile Number "
-            android:inputType="textEmailAddress"
+            android:drawableLeft="@drawable/location_s"
+            android:hint="  Full Address "
+            android:inputType="text"
             android:paddingLeft="10dp"
             android:textSize="20dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -105,28 +105,47 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputAddress"
-        android:layout_width="369dp"
+        android:id="@+id/inputRank"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         app:errorEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputAge">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputAddress2"
-            android:layout_width="398dp"
+            android:id="@+id/inputRank2"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:hint="  Full Address"
+            android:hint="  Rank"
             android:inputType="text"
-            android:drawableLeft="@drawable/location_s"
+            android:drawableLeft="@drawable/rank_s"
             android:paddingLeft="10dp"
             android:textSize="20dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputDesignation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:errorEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAddress">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputDesignation2"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="  Designation"
+            android:inputType="text"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/designation_small"
+            android:paddingLeft="10dp"
+            android:textSize="20dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputBloodGroup"
-        android:layout_width="369dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         app:errorEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +153,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputBloodGroup2"
-            android:layout_width="398dp"
+            android:layout_width="match_parent"
             android:layout_height="52dp"
             android:hint="  Blood group"
             android:inputType="text"
@@ -144,18 +163,18 @@
             android:textSize="20dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
-        android:layout_width="369dp"
+        android:layout_width="match_parent"
         android:layout_height="63dp"
-
         app:errorEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputBloodGroup">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPassword2"
-            android:layout_width="398dp"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="   Password"
             android:drawableLeft="@drawable/look_s"
@@ -167,17 +186,17 @@
     <Button
         android:id="@+id/buttonSignUp"
         android:layout_width="340dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
         android:background="@color/skylightBlue2"
-        android:drawableRight="@drawable/right_arrow"
-        android:paddingEnd="90dp"
-        android:textAlignment="center"
-        android:text="                  Submit"
-        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="Submit"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
         android:textSize="25dp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
+
+
 
 
 </LinearLayout>

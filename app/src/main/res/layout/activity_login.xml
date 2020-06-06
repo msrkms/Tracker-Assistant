@@ -27,7 +27,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
             android:textColor="#4FC0E8"
-            android:textSize="40dp"
+            android:textSize="35dp"
             android:textStyle="bold" />
     </RelativeLayout>
         <ImageView
@@ -43,55 +43,57 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.155" />
 
+
         <Spinner
             android:id="@+id/spinnerUserType"
-            android:layout_width="125dp"
+            android:layout_width="wrap_content"
             android:layout_height="23dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:gravity="center"
             android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.302"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.167" />
+            app:layout_constraintVertical_bias="0.161" />
 
-
-
-<LinearLayout
-    android:id="@+id/linearLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:ignore="MissingConstraints"
-    app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
-    >
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:padding="20dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" >
 
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputMobile"
-        android:layout_width="369dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="5dp"
         app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
-        app:layout_constraintVertical_bias="0.009">
+        app:layout_constraintVertical_bias="0.009"
+        android:gravity="center"
+
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputMobile2"
-            android:layout_width="358dp"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint="  Moblie Number "
             android:inputType="number"
@@ -102,7 +104,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputPassword"
-        android:layout_width="369dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -115,15 +117,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.009"
         app:layout_constraintTop_toBottomOf="@+id/inputMobile"
-        app:passwordToggleEnabled="true">
+        app:passwordToggleEnabled="true"
+        android:gravity="center"
+        >
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPassword2"
-            android:layout_width="358dp"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:hint=" Password"
-
             android:inputType="textPassword"
             android:paddingLeft="10dp"
             android:textSize="20dp" />
@@ -136,6 +139,7 @@
         android:layout_height="47dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
@@ -156,12 +160,12 @@
 
     <TextView
         android:id="@+id/textNewAccount"
-        android:layout_width="363dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="5dp"
         android:text=" Create a new Account "
         android:textAlignment="center"
@@ -176,10 +180,10 @@
 
     <TextView
         android:id="@+id/textForgetpassword"
-        android:layout_width="363dp"
-        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="50dp"
         android:text=" Forgot username?"

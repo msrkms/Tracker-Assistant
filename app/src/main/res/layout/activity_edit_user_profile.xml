@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditUserProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:background="@color/mainForProject"
+            android:padding="20dp">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/EditUserPhoto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/new_user_br" />
+
+            <TextView
+                android:id="@+id/view152"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="40dp"
+                android:layout_toEndOf="@+id/EditUserPhoto"
+                android:text="Normal User"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/view152"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/EditUserPhoto"
+                android:src="@drawable/review" />
+
+            <Button
+                android:id="@+id/buttonUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="70dp"
+                android:background="@color/Red"
+                android:text="Save"
+                android:textAllCaps="true"
+                android:textColor="@android:color/background_light"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-100dp"
+            android:padding="2dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10dp">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="20dp"
+                            android:id="@+id/Fullview"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Basic Information"
+                                android:textAllCaps="false"
+                                android:textStyle="bold"
+                                android:textColor="@color/cardview_dark_background"
+                                />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/inputName"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                >
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/EditName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:drawableLeft="@drawable/user_sma"
+                                    android:hint="  Full Name"
+                                    android:inputType="text"
+                                    android:paddingLeft="10dp"
+                                    android:textSize="20dp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/inputAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/EditAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:drawableLeft="@drawable/location_s"
+                                    android:hint="  Full Address "
+                                    android:inputType="text"
+                                    android:paddingLeft="10dp"
+                                    android:textSize="20dp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="369dp"
+                                android:layout_height="60dp"
+                                app:errorEnabled="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="  Date of Birth:"
+                                    android:layout_marginStart="08dp"
+                                    android:textSize="20dp"
+                                    android:drawableLeft="@drawable/calendar"
+                                    />
+
+
+                                <Button
+                                    android:id="@+id/buttonEditDateOfBrith"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="55dp"
+                                    android:layout_marginStart="170dp"
+                                    android:layout_marginTop="-40dp"
+                                    android:backgroundTint="@color/mainForProject"
+                                    android:drawableRight="@drawable/arrow_down"
+                                    android:hint=" Select "
+                                    android:paddingLeft="10dp"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="18dp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/inputRank"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                app:errorEnabled="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/inputAge">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/EditRank"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:hint="  Rank"
+                                    android:inputType="text"
+                                    android:drawableLeft="@drawable/rank_s"
+                                    android:paddingLeft="10dp"
+                                    android:textSize="20dp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/inputDesignation"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                app:errorEnabled="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/inputAddress">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/EditDesignation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="52dp"
+                                    android:hint="  Designation"
+                                    android:inputType="text"
+                                    android:textAllCaps="false"
+                                    android:drawableLeft="@drawable/designation_small"
+                                    android:paddingLeft="10dp"
+                                    android:textSize="20dp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/inputBloodGroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                app:errorEnabled="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/inputAddress">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/EditBloodGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="52dp"
+                                    android:hint="  Blood group"
+                                    android:inputType="text"
+                                    android:textAllCaps="true"
+                                    android:drawableLeft="@drawable/blood_s"
+                                    android:paddingLeft="10dp"
+                                    android:textSize="20dp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                           <Button
+                               android:id="@+id/passwordButton"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="For Password  "
+                               android:textAllCaps="false"
+                               android:background="@color/white"
+                               android:drawableRight="@drawable/enable_button_small"
+                               android:clickable="true"
+                               android:textColor="@color/cardview_dark_background"
+                               />
+                    <LinearLayout
+                      android:id="@+id/passwordLayout"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:visibility="gone"   >
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/Oldpassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                app:errorEnabled="true"
+                                android:gravity="center"
+                                app:passwordToggleEnabled="true"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/inputBloodGroup">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/EditOldPassword2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="55dp"
+                                    android:hint="   Old Password"
+                                    android:inputType="textPassword"
+                                    android:paddingLeft="10dp"
+                                    android:textSize="20dp"
+                                    />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/Newpassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center"
+                            app:passwordToggleEnabled="true"
+                            app:errorEnabled="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/inputBloodGroup">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/EditNewPassword2"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:hint="   New Password"
+                                android:inputType="textPassword"
+                                android:paddingLeft="10dp"
+                                android:textSize="20dp"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/NewConfirmpassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            app:errorEnabled="true"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:gravity="center"
+                            app:passwordToggleEnabled="true"
+                            app:layout_constraintTop_toBottomOf="@+id/inputBloodGroup">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/EditConfirmPassword2"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:hint="   Confirm Password"
+                                android:inputType="textPassword"
+                                android:paddingLeft="10dp"
+                                android:textSize="20dp"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                    </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                </ScrollView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

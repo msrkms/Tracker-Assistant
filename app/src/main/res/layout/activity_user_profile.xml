@@ -26,7 +26,7 @@
          android:layout_height="150dp"
          android:layout_marginTop="15dp"
          android:layout_centerHorizontal="true"
-         android:src="@drawable/userde" />
+         android:src="@drawable/new_user_br" />
 
 
  </RelativeLayout>
@@ -144,29 +144,6 @@
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:src="@drawable/mail_big"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:layout_gravity="center_vertical"
-            android:text="su@gmail.com"
-            android:textColor="@color/PrimaryDark2"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            />
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="12dp"
-        android:paddingLeft="25dp">
-        <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
             android:src="@drawable/blood_big"/>
         <TextView
             android:layout_width="wrap_content"
@@ -181,6 +158,7 @@
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -190,13 +168,38 @@
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:src="@drawable/phone_big"/>
+            android:src="@drawable/rank_big"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
             android:layout_gravity="center_vertical"
-            android:text="01675977369"
+            android:text="Developer"
+            android:textColor="@color/PrimaryDark2"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="25dp">
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/designation_big"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center_vertical"
+            android:text="Level-2"
             android:textColor="@color/PrimaryDark2"
             android:textStyle="bold"
             android:textSize="20dp"
@@ -213,13 +216,14 @@
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:src="@drawable/phone_big"/>
+            android:src="@drawable/age_big"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
             android:layout_gravity="center_vertical"
-            android:text="01675977369"
+            android:text="32"
+            android:textColor="@color/PrimaryDark2"
             android:textStyle="bold"
             android:textSize="20dp"
             />
