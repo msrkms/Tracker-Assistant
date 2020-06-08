@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -52,7 +53,8 @@ public class EditUserProfileActivity extends AppCompatActivity {
     private FirebaseStorage storage;
     private StorageReference storageReference;
     private ViewGroup FullView,PasswordLayout;
-    private  Button Upload,pass,dateOfBrith;
+    private  Button Upload,dateOfBrith;
+    private TextView pass;
 
     DatePickerDialog.OnDateSetListener dateSetListener2;
     private AlertDialog.Builder alertDialogBuilder;

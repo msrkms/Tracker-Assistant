@@ -3,16 +3,17 @@ package com.example.vehicles_booking;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.cardview.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 public class VehiclesBookingActivity extends AppCompatActivity implements View.OnClickListener {
     DBconnection dBconnection;
-    private CardView car,bike,wireless;
+    private CardView car,bike;
 
     TextView name,phone;
     String VA;
@@ -26,11 +27,9 @@ public class VehiclesBookingActivity extends AppCompatActivity implements View.O
 
         car=findViewById(R.id.optionCar);
         bike=findViewById(R.id.optionBike);
-        wireless=findViewById(R.id.optionWireless);
 
         car.setOnClickListener(this);
         bike.setOnClickListener(this);
-        wireless.setOnClickListener(this);
 
         name=findViewById(R.id.ViewpName);
         phone=findViewById(R.id.ViewId);
@@ -90,12 +89,7 @@ public class VehiclesBookingActivity extends AppCompatActivity implements View.O
                 startActivity(intent);
                 break;
             }
-            case R.id.optionWireless:{
 
-                intent=new Intent(this,CarBookingEnableActivity.class);
-                startActivity(intent);
-                break;
-            }
         }
 
     }

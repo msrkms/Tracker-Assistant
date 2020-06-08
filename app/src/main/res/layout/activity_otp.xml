@@ -6,6 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".OtpActivity">
 
+
+    <TextView
+        android:id="@+id/Massage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="480dp"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:hint="Try Again"
+        android:textStyle="bold"
+        android:textColorHint="@android:color/black"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="57dp" />
+
+
+
+    <TextView
+        android:id="@+id/Timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="380dp"
+        android:textSize="45dp"
+        android:gravity="center"
+        android:hint="00:00"
+        android:textStyle="bold"
+        android:textColorHint="@android:color/black"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="57dp" />
+
     <EditText
         android:id="@+id/editTextCode"
         android:layout_width="wrap_content"

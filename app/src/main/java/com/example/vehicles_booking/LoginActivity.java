@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
             case R.id.textNewAccount: {
 
-                intent = new Intent(this, RegistrationActivity.class);
+                intent = new Intent(this, RegisterActivity.class);
                 startActivity(intent);
                 break;
             }
@@ -159,99 +159,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         }
     }
-/*
-    public void updatedata(){
-        // String phonenumber=DataHolder.Phone;
-        SQLiteDatabase sqLiteDB= dBconnection.getWritableDatabase();
-        umobile=findViewById(R.id.inputMobile2);
-        String us=umobile.toString();
-        String CA=CurrentAddress.toString();
-        String CL=CurrentLocation.toString();
-        String CC=CurrentCounty.toString();
-
-        if (umobile.equals("")){
-
-
-            Toast.makeText(this,"Must input Favourite Number and Favourite Person",Toast.LENGTH_SHORT).show();
-
-        }
-        else {
-            //update qury
-            sqLiteDB.execSQL("UPDATE  patient SET pbmi='"+ CA +"',pbmr='"+ CL +"',pbp='"+ CC +"' WHERE pphone_number='"+us+"'");
-
-        }
-    }
-
- */
-
-
-   //for location track
-/*
-    public void CurrentLocation(){
-
-        //Check Permission
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
-
-            //when permission granted
-            getLocation();
-        }
-        else{
-
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
-
-        }
-
-
-    }
-
-     */
-
-  //  get Location from GOOGLE GPS
-  /*  private void getLocation(){
-
-        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-            @Override
-            public void onComplete(@NonNull Task<Location> task) {
-                //Initialize location
-                Location location =task.getResult();
-                if (location!=null){
-
-                    //Initialize geoCoder
-                    Geocoder geocoder= new Geocoder(LoginActivity.this, Locale.getDefault());
-                    //Initialize  address list
-                    try {
-                        List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-
-                        //Set data
-                      /*CurrentCounty=addresses.get(0).getCountryName().toString();
-                        CurrentLocation=addresses.get(0).getLocality().toString();
-                       CurrentAddress=addresses.get(0).getAddressLine(0).toString();
-
-                       */
-
-                        // DataHolder.CurrentCounty=country.toString();
-                        // DataHolder.CurrentLocation=addresses.get(0).getLocality().toString();
-                        //DataHolder.CurrentAddress=addresses.get(0).getAddressLine(0).toString();
-
-
-        //            }
-       //             catch (IOException e) {
-       //                 e.printStackTrace();
-       //             }
-
-    //            }
-    //        }
-     //   });
-
-  //  }
-
-
-
-
-
-
-
-
 
 }
 

@@ -60,6 +60,8 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
         //getImage();
 
 
+
+        //for random code
         code =new Random();
         int max,min,sendCode;
         String codeStore;

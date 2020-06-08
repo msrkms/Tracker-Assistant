@@ -24,7 +24,7 @@
                 android:id="@+id/EditUserPhoto"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/new_user_br" />
 
             <TextView
@@ -45,7 +45,7 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/view152"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="-8dp"
                 android:layout_toEndOf="@+id/EditUserPhoto"
                 android:src="@drawable/review" />
 
@@ -107,6 +107,7 @@
                                 android:text="Basic Information"
                                 android:textAllCaps="false"
                                 android:textStyle="bold"
+                                android:textSize="14dp"
                                 android:textColor="@color/cardview_dark_background"
                                 />
 
@@ -237,7 +238,7 @@
                                     android:textSize="20dp" />
                             </com.google.android.material.textfield.TextInputLayout>
 
-                           <Button
+                           <TextView
                                android:id="@+id/passwordButton"
                                android:layout_width="wrap_content"
                                android:layout_height="wrap_content"
@@ -246,6 +247,10 @@
                                android:background="@color/white"
                                android:drawableRight="@drawable/enable_button_small"
                                android:clickable="true"
+                               android:layout_marginTop="20dp"
+                               android:textSize="14dp"
+                               android:textStyle="bold"
+                               android:gravity="center"
                                android:textColor="@color/cardview_dark_background"
                                />
                     <LinearLayout

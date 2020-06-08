@@ -20,7 +20,8 @@
             android:name=".AddVehiclesActivity"
             android:parentActivityName=".AdminHomeActivity" />
         <activity android:name=".AdminHomeActivity" />
-        <activity android:name=".AdminChartActivity" />
+        <activity android:name=".AdminChartActivity"
+            android:parentActivityName=".AdminHomeActivity" />
         <activity
             android:name=".AdminSearchPageActivity"
             android:parentActivityName=".AdminHomeActivity" />

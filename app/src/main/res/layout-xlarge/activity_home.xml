@@ -46,7 +46,7 @@
 
                 <RelativeLayout
                     android:id="@+id/ProfilePic"
-                    android:layout_width="260dp"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_margin="16dp"
@@ -70,7 +70,7 @@
                         android:layout_marginEnd="5dp"
                         android:layout_marginBottom="6dp"
                         android:backgroundTint="#4FC0E8"
-                        android:src="@drawable/user_text"
+                        android:src="@drawable/profile_user"
                         />
 
 
@@ -106,7 +106,7 @@
 
                 <RelativeLayout
 
-                    android:layout_width="243dp"
+                    android:layout_width="143dp"
                     android:layout_height="214dp"
                     android:layout_alignParentTop="true"
                     android:layout_gravity="right"
@@ -121,10 +121,10 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginStart="6dp"
+                        android:layout_marginStart="1dp"
                         android:layout_marginLeft="102dp"
                         android:layout_marginTop="14dp"
-                        android:layout_marginEnd="35dp"
+                        android:layout_marginEnd="10dp"
                         android:layout_marginBottom="181dp"
                         android:text="Name:"
                         android:textColor="#A6ACAF"
@@ -144,7 +144,7 @@
                         android:layout_marginTop="37dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="159dp"
-                        android:text="Ainun NIshad Rahat"
+                        android:text="Ainun Nishad Rahat"
                         android:textColor="@color/PrimaryDark2"
                         android:textSize="14dp"
                         android:textStyle="bold" />
@@ -160,7 +160,7 @@
                         android:layout_marginStart="1dp"
                         android:layout_marginLeft="102dp"
                         android:layout_marginTop="64dp"
-                        android:layout_marginEnd="40dp"
+                        android:layout_marginEnd="10dp"
                         android:layout_marginBottom="131dp"
                         android:text="Mobile Number:"
                         android:textColor="#A6ACAF"
@@ -196,7 +196,7 @@
                         android:layout_marginStart="1dp"
                         android:layout_marginLeft="102dp"
                         android:layout_marginTop="115dp"
-                        android:layout_marginEnd="40dp"
+                        android:layout_marginEnd="10dp"
                         android:layout_marginBottom="80dp"
                         android:text="Offical ID:"
                         android:textColor="#A6ACAF"
@@ -470,7 +470,7 @@
 
                 <RelativeLayout
                     android:id="@+id/BPView54"
-                    android:layout_width="176dp"
+                    android:layout_width="196dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_margin="16dp"
@@ -489,7 +489,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginLeft="7dp"
                             android:layout_marginTop="2dp"
-                            android:src="@drawable/wireless" />
+                            android:src="@drawable/vespa" />
 
                     </RelativeLayout>
 
@@ -498,7 +498,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_marginLeft="72dp"
-                        android:text="Wireless"
+                        android:text="Total Booking"
                         android:textColor="@color/PrimaryDark2"
                         android:textSize="18dp"
                         android:textStyle="bold" />

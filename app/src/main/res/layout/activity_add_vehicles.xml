@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AddVehiclesActivity"
     android:background="#F4F6F7"
-
     >
 <LinearLayout
     android:layout_width="match_parent"

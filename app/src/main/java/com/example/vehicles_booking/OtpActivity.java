@@ -3,12 +3,15 @@ package com.example.vehicles_booking;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class OtpActivity extends AppCompatActivity {
@@ -27,7 +31,11 @@ public class OtpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
     private EditText editText;
-
+    private TextView massage,timerView;
+    private CountDownTimer countDownTimer;
+    private boolean mTimerRuuning;
+    private long mTimeLeftMillis= START_Time;
+    private static final long START_Time=120000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +43,17 @@ public class OtpActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        timerView=findViewById(R.id.Timer);
+        massage=findViewById(R.id.Massage);
+
         progressBar = findViewById(R.id.progressbar);
         editText = findViewById(R.id.editTextCode);
 
+
+        //for timer
+        starTime();
+
+        //for verify
         String phonenumber = getIntent().getStringExtra("phonenumber");
         sendVerificationCode(phonenumber);
 
@@ -58,6 +74,39 @@ public class OtpActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    private void starTime(){
+
+        countDownTimer=new CountDownTimer(mTimeLeftMillis,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTimeLeftMillis=millisUntilFinished;
+                CountDownText();
+
+            }
+
+            @Override
+            public void onFinish() {
+                mTimerRuuning=false;
+                massage.setVisibility(View.VISIBLE);
+
+            }
+        }.start();
+
+    }
+    private void CountDownText(){
+
+        int minutes=(int) (mTimeLeftMillis/1000)/60;
+        int seconds=(int) (mTimeLeftMillis/1000)%60;
+        String TimerFormatted=String.format(Locale.getDefault(),"%02d:%02d",minutes,seconds);
+        timerView.setText(TimerFormatted);
+
+
+
+    }
+
+
 
     private void verifyCode(String code){
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationid, code);
