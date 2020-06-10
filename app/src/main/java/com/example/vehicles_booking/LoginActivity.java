@@ -79,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 intent = new Intent(this, ForgotPasswordActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_front_in_right,R.anim.slide_front_out_left);
                 break;
             }
             case R.id.textNewAccount: {

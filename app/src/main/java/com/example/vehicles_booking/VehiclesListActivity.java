@@ -1,21 +1,19 @@
 package com.example.vehicles_booking;
 
-import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
 public class VehiclesListActivity extends AppCompatActivity {
 
     DBconnection dBconnection;
+    CustomListAdapter customListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +35,7 @@ public class VehiclesListActivity extends AppCompatActivity {
         ArrayList<String> ListVehiclenumber=new ArrayList<>();
 
 
-        ListView listView=(ListView) findViewById(R.id.list) ;
+        final ListView listView=(ListView) findViewById(R.id.list) ;
         SQLiteDatabase sqLiteDatabase= dBconnection.getReadableDatabase();
         Cursor data =sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE_NAME,null);
         if (data.getCount()==0)
@@ -59,6 +57,23 @@ public class VehiclesListActivity extends AppCompatActivity {
             }
 
         }
+
+       /*//when add on click Listener
+       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(VehiclesListActivity.this,AdminSearchPageActivity.class);
+               // intent.putExtra("ListVehiclenumber",listView.getItemAtPosition(position).toString());
+               // System.out.println("Data "+DataHolder.CurrentAddress);
+
+                startActivity(intent);
+
+
+            }
+        });
+
+        */
+
     }
 
 

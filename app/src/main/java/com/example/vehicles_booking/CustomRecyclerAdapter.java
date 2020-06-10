@@ -33,7 +33,8 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
          //Set logo/pic to imageView
         holder.imageView.setImageResource(RMainModels.get(position).getLangLogo());
         //when Set Any text
-        //holder.imageView.setText(RMainModels.get(position).get());
+        //holder.image
+        // View.setText(RMainModels.get(position).get());
 
     }
 
