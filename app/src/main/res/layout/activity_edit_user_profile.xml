@@ -28,7 +28,7 @@
                 android:src="@drawable/new_user_br" />
 
             <TextView
-                android:id="@+id/view152"
+                android:id="@+id/UserType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -43,11 +43,20 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/view152"
+                android:layout_below="@+id/UserType"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="-8dp"
                 android:layout_toEndOf="@+id/EditUserPhoto"
                 android:src="@drawable/review" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/vi4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/UserType"
+                android:layout_marginStart="120dp"
+                android:src="@drawable/edit_p" />
 
             <Button
                 android:id="@+id/buttonUpload"
