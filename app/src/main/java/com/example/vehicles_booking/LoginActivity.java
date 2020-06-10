@@ -29,7 +29,6 @@ import com.example.vehicles_booking.BackEnd.AllUrls;
 import com.example.vehicles_booking.BackEnd.Decode;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -154,21 +153,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     //String decode= Decode.decoded(token);
                     System.out.println(role);
                     if(role.equals("Customer")){
-                     //   Intent intent = new Intent(LoginActivity.this,UserProfileActivity.class);
-                    //    intent.putExtra("token",token);
-                    //    startActivity(intent);
-                        new AlertDialog.Builder(LoginActivity.this)
-                                .setTitle("Warning")
-                                .setMessage(token)
-                                .setNegativeButton("ok", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        progressDialog.dismiss();
-                                    }
-                                })
-                                .show();
+                        progressDialog.dismiss();
+                        Intent intent = new Intent(LoginActivity.this,UserProfileActivity.class);
+                        intent.putExtra("token",token);
+                       startActivity(intent);
+                       LoginActivity.this.finish();
                     }
                     else if(role.equals("Admin")){
+                        progressDialog.dismiss();
                        // startActivity(new Intent(LoginActivity.this,AdminDashboardActivity.class));
                         new AlertDialog.Builder(LoginActivity.this)
                                 .setTitle("Wanring")
@@ -176,18 +168,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 .setNegativeButton("ok", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
-                                        progressDialog.dismiss();
+
                                     }
                                 })
                                 .show();
                     }else{
+                        progressDialog.dismiss();
                         new AlertDialog.Builder(LoginActivity.this)
                                 .setTitle("Warning")
                                 .setMessage("Super Admin feature not available here")
                                 .setNegativeButton("ok", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
-                                        progressDialog.dismiss();
+
                                     }
                                 })
                                 .show();
@@ -206,6 +199,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
                 String message="";
                 try {
                     String badreq = new String(error.networkResponse.data, "utf-8");
@@ -222,7 +216,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         .setNegativeButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                progressDialog.dismiss();
+
                             }
                         })
                         .show();
@@ -230,13 +224,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
 
         RequestQueue requestQueue =  Volley.newRequestQueue(LoginActivity.this);
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS * 2, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS * 5, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(jsonObjectRequest);
 
     }
 
     private  void showDialog(){
-        this.progressDialog=new ProgressDialog(this);
+        progressDialog=new ProgressDialog(this);
         progressDialog.setCancelable(true);
         progressDialog.setTitle("Verifying User...");
         progressDialog.show();

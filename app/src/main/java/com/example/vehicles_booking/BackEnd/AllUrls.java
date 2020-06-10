@@ -7,4 +7,6 @@ public class AllUrls {
 
 
     public static final String UserLogin=UserUrl+"/Login";
+
+    public static final String GetProfile=Api+"/Profile";
 }
