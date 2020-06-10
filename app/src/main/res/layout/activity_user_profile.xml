@@ -58,6 +58,7 @@
                     android:layout_centerInParent="true"
                     />
                 <TextView
+                    android:id="@+id/tvDesignationTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/UserName"
@@ -98,6 +99,7 @@
             android:layout_height="36dp"
             android:src="@drawable/phone_big"/>
         <TextView
+            android:id="@+id/tvPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
@@ -122,6 +124,7 @@
             android:layout_height="36dp"
             android:src="@drawable/location_big"/>
         <TextView
+            android:id="@+id/tdAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
@@ -146,6 +149,7 @@
             android:layout_height="36dp"
             android:src="@drawable/blood_big"/>
         <TextView
+            android:id="@+id/tvBloodGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
@@ -170,6 +174,7 @@
             android:layout_height="36dp"
             android:src="@drawable/rank_big"/>
         <TextView
+            android:id="@+id/tvDesignation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
@@ -195,6 +200,7 @@
             android:layout_height="36dp"
             android:src="@drawable/designation_big"/>
         <TextView
+            android:id="@+id/tvRank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
@@ -218,6 +224,7 @@
             android:layout_height="36dp"
             android:src="@drawable/age_big"/>
         <TextView
+            android:id="@+id/tvDOB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
