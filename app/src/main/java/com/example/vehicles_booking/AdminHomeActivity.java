@@ -1,16 +1,14 @@
 package com.example.vehicles_booking;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.HorizontalBarChart;
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -20,7 +18,7 @@ import java.util.ArrayList;
 
 public class AdminHomeActivity extends AppCompatActivity implements View.OnClickListener {
     DBconnection dBconnection;
-    RelativeLayout add,costView,setting,search;
+    RelativeLayout add,costView,setting,search,request;
     TextView moreSate;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +34,15 @@ public class AdminHomeActivity extends AppCompatActivity implements View.OnClick
         search=findViewById(R.id.OptionSearch);
         setting=findViewById(R.id.OptionSettings);
         moreSate=findViewById(R.id.OptionChart);
+        request=findViewById(R.id.OptionRequestUser);
+
 
         costView.setOnClickListener(this);
         add.setOnClickListener(this);
         search.setOnClickListener(this);
         setting.setOnClickListener(this);
         moreSate.setOnClickListener(this);
+        request.setOnClickListener(this);
 
     }
 
@@ -79,6 +80,12 @@ public class AdminHomeActivity extends AppCompatActivity implements View.OnClick
             case R.id.OptionChart:{
 
                 intent=new Intent(this,AdminChartActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.OptionRequestUser:{
+
+                intent=new Intent(this,UserRequestActivity.class);
                 startActivity(intent);
                 break;
             }

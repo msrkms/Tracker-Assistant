@@ -151,7 +151,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     if(role.equals("Customer")){
                         DataHolder.UserType="Normal User";
                         progressDialog.dismiss();
-                        Intent intent = new Intent(LoginActivity.this,UserProfileActivity.class);
+                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                         intent.putExtra("token",token);
                        startActivity(intent);
                        LoginActivity.this.finish();

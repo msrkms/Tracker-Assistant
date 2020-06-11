@@ -8,28 +8,37 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/main"
-        android:text="MT"
-        android:layout_marginStart="-40dp"
-        android:textColor="@color/Red"
-        android:textSize="70dp"
-        android:textStyle="bold" />
+        android:gravity="center"
+        >
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/main"
-        android:text="Assistant"
-        android:layout_marginTop="-52dp"
-        android:layout_marginStart="60dp"
-        android:textColor="@color/skylightBlue2"
-        android:textSize="40dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/main"
+            android:text="MT"
+            android:textColor="@color/Red"
+            android:textSize="70dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/textView1"
+            android:fontFamily="@font/main"
+            android:text="Assistant"
+            android:textColor="@color/skylightBlue2"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
 
     <ImageView
         android:id="@+id/imageMain2"

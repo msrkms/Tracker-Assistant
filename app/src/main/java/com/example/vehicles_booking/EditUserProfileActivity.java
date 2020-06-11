@@ -72,7 +72,8 @@ public class EditUserProfileActivity extends AppCompatActivity {
         UserPhoto=findViewById(R.id.EditUserPhoto);
         dateOfBrith=findViewById(R.id.buttonEditDateOfBrith);
         userType=findViewById(R.id.UserType);
-        userType.setText(DataHolder.UserType);
+        String Type=DataHolder.UserType;
+        userType.setText(Type);
 
         getImage();
         dateOfBirth();

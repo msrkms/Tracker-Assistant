@@ -28,7 +28,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/optionWireles2"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="220dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_marginLeft="16dp"
@@ -44,7 +44,7 @@
                 <RelativeLayout
                     android:id="@+id/BPView5"
                     android:layout_width="176dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="140dp"
                     android:layout_gravity="left"
                     android:layout_margin="16dp"
                     android:orientation="vertical"
@@ -62,7 +62,14 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginLeft="7dp"
                             android:layout_marginTop="2dp"
-                            android:src="@drawable/user" />
+                            android:src="@drawable/admin_pic" />
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="65dp"
+                            android:src="@drawable/vespa" />
 
                     </RelativeLayout>
 
@@ -151,39 +158,55 @@
                         android:textSize="26dp"
                         android:textStyle="bold" />
 
-
-
                 </RelativeLayout>
-
-
 
                 <RelativeLayout
-                    android:id="@+id/OptionLogout"
-                    android:layout_width="79dp"
-                    android:layout_height="83dp"
-                    android:layout_gravity="bottom"
+                    android:id="@+id/OptionRequestUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:orientation="vertical"
-
+                    android:layout_gravity="bottom"
                     >
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/list" />
 
-                    <RelativeLayout
-                        android:layout_width="70dp"
-                        android:layout_height="70dp">
+                    <TextView
+                        android:id="@+id/v45"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="72dp"
+                        android:text="User Request"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/PrimaryDark2"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
 
-                        <ImageView
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="4dp"
-                            android:src="@drawable/vespa" />
-
-                    </RelativeLayout>
-
+                    <TextView
+                        android:id="@+id/viewRequestNumber"
+                        android:layout_width="82dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="52dp"
+                        android:layout_marginBottom="9dp"
+                        android:layout_toEndOf="@+id/v45"
+                        android:text="4"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/Red"
+                        android:textSize="26dp"
+                        android:textStyle="bold" />
 
 
                 </RelativeLayout>
+
+
 
 
             </androidx.cardview.widget.CardView>
