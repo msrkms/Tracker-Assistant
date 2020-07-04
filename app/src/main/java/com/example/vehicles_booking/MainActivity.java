@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 public void run() {
 
-                    Intent mySuperIntent = new Intent(MainActivity.this, LoginActivity.class);
+                    Intent mySuperIntent = new Intent(MainActivity.this, AdminSearchPageActivity.class);
                     startActivity(mySuperIntent);
 
                     finish();
