@@ -4,18 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".RegisterActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/Logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_main"
+            android:layout_gravity="center"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_below="@id/Logo"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/Appname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MT Assistant"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:layout_below="@id/Appname"
+
+            />
+    </RelativeLayout>
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="394dp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/Welcome"
         android:orientation="horizontal"
         android:padding="15dp">
+
 
         <Spinner
             android:id="@+id/spinnerCountries"
@@ -28,8 +75,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:digits="0123456789"
-            android:hint=" Phone no(17XXXXXXXX)"
-            android:maxLength="10"
+            android:hint=" Phone no"
+            android:maxLength="11"
+            android:inputType="number"
             android:textColorHint="@android:color/black" />
 
     </LinearLayout>
@@ -40,13 +88,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="104dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginBottom="308dp"
-        android:background="#00e5ff"
+        android:layout_marginEnd="104dp"
+        android:background="@color/mainForProject"
         android:text="Send OTP"
         android:textAllCaps="false"
+        android:layout_below="@id/linearLayout"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
         android:textStyle="bold" />

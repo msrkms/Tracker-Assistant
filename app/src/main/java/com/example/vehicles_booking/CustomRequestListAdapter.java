@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class CustomListAdapter extends BaseAdapter{
+
+public class CustomRequestListAdapter extends BaseAdapter {
 
     ArrayList<String> name=new ArrayList<>();
     ArrayList<String> ListVehiclenumber=new ArrayList<>();
@@ -18,7 +19,7 @@ public class CustomListAdapter extends BaseAdapter{
     Context context;
 
     //this method make for data recive from Vehicle List class
-    public CustomListAdapter(Context context , ArrayList<String> theList, ArrayList<String> listVehiclenumber,int CountLength) {
+    public CustomRequestListAdapter(Context context , ArrayList<String> theList, ArrayList<String> listVehiclenumber,int CountLength) {
 
         this.CountLength=CountLength;
         this.context=context;
@@ -44,14 +45,15 @@ public class CustomListAdapter extends BaseAdapter{
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-       if (view==null){
-           layoutInflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-           //Here list view is a Layout XML
-           view=layoutInflater.inflate(R.layout.list_view,viewGroup,false);
-       }
 
-        TextView listname=(TextView) view.findViewById(R.id.ListVehicleNumber);
-        TextView mileage=(TextView) view.findViewById(R.id.SevenDayMileage);
+        if (view==null){
+            layoutInflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            //Here list view is a Layout XML
+            view=layoutInflater.inflate(R.layout.user_request_list_view,viewGroup,false);
+        }
+
+        TextView listname=(TextView) view.findViewById(R.id.RequestUserName);
+        TextView mileage=(TextView) view.findViewById(R.id.RequestUserId);
         listname.setText(name.get(i));
         mileage.setText(ListVehiclenumber.get(i));
 
@@ -59,4 +61,6 @@ public class CustomListAdapter extends BaseAdapter{
 
     }
 
+
 }
+

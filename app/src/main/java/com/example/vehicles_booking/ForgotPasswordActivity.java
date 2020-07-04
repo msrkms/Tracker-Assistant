@@ -1,14 +1,6 @@
 package com.example.vehicles_booking;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
-import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -17,8 +9,13 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.Random;
 
@@ -186,7 +183,11 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_back_in_left,R.anim.slide_back_out_right);
+    }
 }
 
 

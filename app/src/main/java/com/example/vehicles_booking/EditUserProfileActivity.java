@@ -54,7 +54,7 @@ public class EditUserProfileActivity extends AppCompatActivity {
     private StorageReference storageReference;
     private ViewGroup FullView,PasswordLayout;
     private  Button Upload,dateOfBrith;
-    private TextView pass;
+    private TextView pass,userType;
 
     DatePickerDialog.OnDateSetListener dateSetListener2;
     private AlertDialog.Builder alertDialogBuilder;
@@ -71,6 +71,9 @@ public class EditUserProfileActivity extends AppCompatActivity {
         storageReference=storage.getReference();
         UserPhoto=findViewById(R.id.EditUserPhoto);
         dateOfBrith=findViewById(R.id.buttonEditDateOfBrith);
+        userType=findViewById(R.id.UserType);
+        String Type=DataHolder.UserType;
+        userType.setText(Type);
 
         getImage();
         dateOfBirth();

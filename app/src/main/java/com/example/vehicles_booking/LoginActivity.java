@@ -7,13 +7,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +26,6 @@ import com.example.vehicles_booking.BackEnd.Decode;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -84,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 intent = new Intent(this, ForgotPasswordActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_front_in_right,R.anim.slide_front_out_left);
                 break;
             }
             case R.id.textNewAccount: {
@@ -153,13 +149,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     //String decode= Decode.decoded(token);
                     System.out.println(role);
                     if(role.equals("Customer")){
+                        DataHolder.UserType="Normal User";
                         progressDialog.dismiss();
-                        Intent intent = new Intent(LoginActivity.this,UserProfileActivity.class);
+                        Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                         intent.putExtra("token",token);
                        startActivity(intent);
                        LoginActivity.this.finish();
                     }
                     else if(role.equals("Admin")){
+                        DataHolder.UserType="ADMIN";
                         progressDialog.dismiss();
                        // startActivity(new Intent(LoginActivity.this,AdminDashboardActivity.class));
                         new AlertDialog.Builder(LoginActivity.this)

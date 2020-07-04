@@ -1,14 +1,11 @@
 package com.example.vehicles_booking;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,12 +53,12 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
         userPhoto=findViewById(R.id.HomeUserPhoto);
 
 
-        viewdata();
+
         //getImage();
 
 
 
-        //for random code
+      /*  //for random code
         code =new Random();
         int max,min,sendCode;
         String codeStore;
@@ -75,28 +72,12 @@ public class HomeActivity extends AppCompatActivity  implements View.OnClickList
         codeStore="BAF"+sendCode;
         UID.setText(codeStore);
 
+       */
+
     }
 
 
-    public void viewdata(){
-        dBconnection = new DBconnection(this);
 
-        String phn=DataHolder.Phone;
-        SQLiteDatabase sqLiteDatabase= dBconnection.getReadableDatabase();
-        Cursor cursor =sqLiteDatabase.rawQuery("Select * from patient WHERE pphone_number='"+phn+"' ",null);
-        if (cursor.moveToNext())
-        {
-            Uname.setText(cursor.getString(1));
-            Uphone.setText(cursor.getString(2));
-           // UID.setText(cursor.getString(0));
-
-
-        } else {
-
-            Toast.makeText(this, "No data is found", Toast.LENGTH_LONG);
-
-        }
-    }
 
     public void onClick(View v){
 
