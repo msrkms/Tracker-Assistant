@@ -1,14 +1,17 @@
 package com.example.vehicles_booking;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +20,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class AdminSearchPageActivity extends AppCompatActivity implements View.OnClickListener {
 
     DBconnection dBconnection;
-    Spinner spinner,sp;
+    TextView StartDate,EndDate;
     ImageButton submit;
+    DatePickerDialog.OnDateSetListener dateSetListener1, dateSetListener2;
+
 
     //for recycel view
     RecyclerView recyclerView;
@@ -36,12 +42,18 @@ public class AdminSearchPageActivity extends AppCompatActivity implements View.O
         //sp=findViewById(R.id.spinnerSearchType);
         submit=findViewById(R.id.SubmitButton);
         submit.setOnClickListener(this);
+        StartDate=findViewById(R.id.startDate);
+        EndDate=findViewById(R.id.endDate);
 
         RecycelView();
-        Dropdownlist();
+       // Dropdownlist();
         DataViewForList();
+        Startdate();
+        EndDate();
+
 
     }
+
 
 
     public void RecycelView(){
@@ -73,13 +85,79 @@ public class AdminSearchPageActivity extends AppCompatActivity implements View.O
 
 
 
-    public void Dropdownlist(){
+   /* public void Dropdownlist(){
         String[] VehiclesList={"User","Vehicle"};
-        spinner = findViewById(R.id.spinnerSearchType);
+        spinner = findViewById(R.id.e);
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,VehiclesList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }
+
+    */
+
+    public void Startdate(){
+        Calendar calendar=Calendar.getInstance();
+        final int year=calendar.get(Calendar.YEAR);
+        final int month=calendar.get(Calendar.MONTH);
+        final int day=calendar.get(Calendar.DAY_OF_MONTH);
+        StartDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog=new DatePickerDialog(
+                        AdminSearchPageActivity.this
+                        ,dateSetListener1,year,month,day
+
+                );
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                datePickerDialog.show();
+
+            }
+        });
+
+        dateSetListener1=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int Year, int Month, int Day) {
+
+                Month = Month+1;
+                String date= Day+"/"+ Month +"/"+Year;
+                StartDate.setText(date);
+            }
+        };
+
+
+    }
+    public void EndDate(){
+        Calendar calendar=Calendar.getInstance();
+        final int year=calendar.get(Calendar.YEAR);
+        final int month=calendar.get(Calendar.MONTH);
+        final int day=calendar.get(Calendar.DAY_OF_MONTH);
+        EndDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog=new DatePickerDialog(
+                        AdminSearchPageActivity.this
+                        ,dateSetListener2,year,month,day
+
+                );
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                datePickerDialog.show();
+
+            }
+        });
+
+        dateSetListener2=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int Year, int Month, int Day) {
+
+                Month = Month+1;
+                String date= Day+"/"+ Month +"/"+Year;
+                EndDate.setText(date);
+            }
+        };
+
+
+    }
+
 
 
     public void onClick(View v){

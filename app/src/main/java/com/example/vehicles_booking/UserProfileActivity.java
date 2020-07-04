@@ -23,7 +23,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.vehicles_booking.BackEnd.AgeCalculator;
 import com.example.vehicles_booking.BackEnd.AllUrls;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -37,13 +36,6 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,6 +50,7 @@ public class UserProfileActivity extends AppCompatActivity {
     private StorageReference storageReference;
 
     ImageView editBtn;
+    String dateOfBirth;
 
     private TextView textViewName, textViewPhoneNumber, textViewAddress, textViewDOB, textViewRank, textViewDesignation, textViewBloodGroup, textViewDesignationTitle;
 
@@ -197,6 +190,8 @@ public class UserProfileActivity extends AppCompatActivity {
                 editor.commit();
                 editor.apply();
                 showData();
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
